@@ -1,5 +1,6 @@
 package com.carrion.edward.androidkotlinretrofitcoroutine.view.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel(private val mainRepository: MovieDataSource) : ViewModel() {
+class MainViewModel @ViewModelInject constructor(private val mainRepository: MovieDataSource) :
+    ViewModel() {
     private val _users = MutableLiveData<MovieResult>()
     val users: LiveData<MovieResult> = _users
 

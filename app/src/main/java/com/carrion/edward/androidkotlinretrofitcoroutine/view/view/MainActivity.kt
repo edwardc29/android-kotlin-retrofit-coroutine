@@ -2,27 +2,27 @@ package com.carrion.edward.androidkotlinretrofitcoroutine.view.view
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carrion.edward.androidkotlinretrofitcoroutine.R
-import com.carrion.edward.androidkotlinretrofitcoroutine.di.Injection
 import com.carrion.edward.androidkotlinretrofitcoroutine.view.adapter.MainAdapter
-import com.carrion.edward.androidkotlinretrofitcoroutine.view.base.ViewModelFactory
+import com.carrion.edward.androidkotlinretrofitcoroutine.view.base.BaseActivity
 import com.carrion.edward.androidkotlinretrofitcoroutine.view.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel by viewModels<MainViewModel>()
     private lateinit var adapter: MainAdapter
+
+    override fun getLayout() = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setupViewModel()
         setupUI()
         setupObservers()
     }
@@ -31,13 +31,6 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         viewModel.loadUsers(1)
-    }
-
-    private fun setupViewModel() {
-        viewModel = ViewModelProviders.of(
-            this,
-            ViewModelFactory(Injection.providerRepository())
-        ).get(MainViewModel::class.java)
     }
 
     private fun setupUI() {

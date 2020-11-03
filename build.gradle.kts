@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        //mavenCentral()
         google()
         jcenter()
     }
@@ -9,12 +8,12 @@ buildscript {
     dependencies {
         classpath(Build.androidGradlePlugin)
         classpath(Build.kotlinGradlePlugin)
+        classpath(Build.hiltGradlePlugin)
     }
 }
 
 allprojects {
     repositories {
-        //mavenCentral()
         google()
         jcenter()
     }

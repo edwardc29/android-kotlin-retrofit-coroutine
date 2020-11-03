@@ -3,6 +3,7 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinAndroidExtensions)
     id(Plugins.kotlinKapt)
+    id(Plugins.hilt)
 }
 
 android {
@@ -50,8 +51,15 @@ dependencies {
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.coreKtx)
     implementation(Libraries.appCompat)
+    implementation(Libraries.activityKtx)
     implementation(Libraries.material)
     implementation(Libraries.constraintLayout)
+
+    implementation(Libraries.hilt)
+    kapt(Libraries.hiltCompiler)
+
+    implementation(Libraries.hiltLifecycleViewModel)
+    kapt(Libraries.hiltLifecycleCompiler)
 
     implementation(Libraries.coil)
 
@@ -68,4 +76,8 @@ dependencies {
     testImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.androidxJunit)
     androidTestImplementation(TestLibraries.androidxEspressoCore)
+}
+
+kapt {
+    correctErrorTypes = true
 }

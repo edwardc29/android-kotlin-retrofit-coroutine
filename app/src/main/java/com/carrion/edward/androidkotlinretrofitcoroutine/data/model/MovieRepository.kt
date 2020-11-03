@@ -2,8 +2,9 @@ package com.carrion.edward.androidkotlinretrofitcoroutine.data.model
 
 import com.carrion.edward.androidkotlinretrofitcoroutine.data.api.ApiClient
 import com.carrion.edward.androidkotlinretrofitcoroutine.data.api.Result
+import javax.inject.Inject
 
-class MovieRepository : MovieDataSource {
+class MovieRepository @Inject constructor() : MovieDataSource {
     override suspend fun retrieveMovies(page: Int): Result<MovieResult> {
         try {
             val response = ApiClient.build()?.movies(page)

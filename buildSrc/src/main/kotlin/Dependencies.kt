@@ -1,4 +1,5 @@
 const val kotlinVersion = "1.3.72"
+const val hiltVersion = "2.28-alpha"
 
 object Build {
     object Versions {
@@ -7,6 +8,7 @@ object Build {
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
 }
 
 object Plugins {
@@ -14,6 +16,7 @@ object Plugins {
     const val kotlinAndroid = "kotlin-android"
     const val kotlinAndroidExtensions = "kotlin-android-extensions"
     const val kotlinKapt = "kotlin-kapt"
+    const val hilt = "dagger.hilt.android.plugin"
 }
 
 object AndroidSdk {
@@ -27,6 +30,7 @@ object Libraries {
     private object Versions {
         const val ktx = "1.3.0"
         const val appCompat = "1.2.0"
+        const val activityKtx = "1.1.0"
         const val material = "1.2.1"
         const val constraintLayout = "2.0.2"
 
@@ -41,13 +45,22 @@ object Libraries {
         const val lifecycleLivedataKtx = "2.2.0"
         const val lifecycleViewModelKtx = "2.2.0"
         const val lifecycleCompiler = "2.2.0"
+
+        const val hiltLifecycle = "1.0.0-alpha01"
     }
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     const val coreKtx = "androidx.core:core-ktx:${Versions.ktx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltLifecycle}"
+    const val hiltLifecycleCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltLifecycle}"
+
+    const val hilt = "com.google.dagger:hilt-android:${hiltVersion}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${hiltVersion}"
 
     const val coil = "io.coil-kt:coil:${Versions.coil}"
 
