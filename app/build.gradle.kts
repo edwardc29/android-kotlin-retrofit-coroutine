@@ -55,6 +55,12 @@ dependencies {
     implementation(Libraries.material)
     implementation(Libraries.constraintLayout)
 
+    implementation(Libraries.paging3)
+
+    implementation(Libraries.roomRuntime)
+    implementation(Libraries.roomKtx)
+    kapt(Libraries.roomCompiler)
+
     implementation(Libraries.hilt)
     kapt(Libraries.hiltCompiler)
 
