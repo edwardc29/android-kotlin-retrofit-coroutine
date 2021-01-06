@@ -36,9 +36,9 @@ object Libraries {
 
         const val coil = "1.0.0"
 
-        const val gson = "2.8.0"
-        const val retrofit = "1.1.0"
-        const val converterGson = "2.6.0"
+        const val gson = "2.8.6"
+        const val retrofit = "2.9.0"
+        const val converterGson = "2.9.0"
         const val loggingInterceptor = "4.9.0"
 
         const val lifecycleExtensions = "2.2.0"
@@ -47,6 +47,9 @@ object Libraries {
         const val lifecycleCompiler = "2.2.0"
 
         const val hiltLifecycle = "1.0.0-alpha01"
+
+        const val paging3 = "3.0.0-alpha11"
+        const val room = "2.3.0-alpha04"
     }
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
@@ -73,6 +76,12 @@ object Libraries {
     const val lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleLivedataKtx}"
     const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelKtx}"
     const val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycleCompiler}"
+
+    const val paging3 = "androidx.paging:paging-runtime:${Versions.paging3}"
+
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
 }
 
 object TestLibraries {
